@@ -1,0 +1,42 @@
+.color {
+    background: #F0F2F3;
+}
+
+.none {
+    height: 40px;
+    outline: none !important;
+    border: none !important;
+}
+
+.colou {
+    background: #007580;
+    height: 25px;
+    width: 25px;
+}
+
+.width {
+    border-radius: 10px;
+}
+
+.point {
+    cursor: pointer;
+}
+
+.inpu {
+    border-radius: 5px;
+    background: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .point {
+     position: relative; 
+     margin-left: 120px;
+     margin-top: 15px;
+    }
+
+    .inpu {
+        width: 350px;
+        margin-top: 10px;
+    }
+  }
+

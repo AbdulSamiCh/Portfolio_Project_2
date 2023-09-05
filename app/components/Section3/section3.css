@@ -1,0 +1,16 @@
+.down {
+  border-radius: 0px 0px 10px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 265px;
+  width: 355px;
+}
+
+
+@media only screen and (max-width:768px) {
+
+    .down {
+        width: 368px;
+        margin-top: 275px;
+    }
+  
+  }

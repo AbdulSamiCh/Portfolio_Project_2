@@ -1,0 +1,68 @@
+.bg1 {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background: #f0f2f3;
+}
+
+.bg2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-right: 70px;
+}
+
+.row {
+  display: flex;
+}
+
+.margbo {
+  margin-bottom: 100px;
+}
+
+.margi {
+  margin-top: 40px;
+}
+.succes {
+  width: 60px;
+  height: 30px;
+}
+
+.succe {
+    height: 50px;
+    width: 50px;
+}
+.end {
+    margin-left: 200px;
+}
+.orange {
+    background: #F5813F;
+    width: 70px;
+}
+
+.clas2 {
+  height: 40px;
+  width: 50px;
+}
+
+.side {
+  margin-left: 80px;
+}
+
+@media only screen and (max-width:768px) {
+
+  .newclas {
+    margin-left: 25px;
+  }
+  .mleft{
+    margin-left: 110px;
+  }
+  .left2 {
+    margin-left: 270px;
+  }
+  .post {
+    position: relative;
+    left: 40px;
+  }
+
+}

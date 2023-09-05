@@ -1,0 +1,22 @@
+.colobg {
+    background: var(--gray-scales-off-white, #F0F2F3);
+}
+
+.font {
+    font-size: xx-large;
+}
+
+.final {
+    margin-top: -40px;
+    margin-left: 140px;
+}
+
+@media only screen and (max-width:768px) {
+    .final {
+        margin-left: 50px;
+    }
+}
+
+.mtop {
+    margin-top: 61px;
+}
