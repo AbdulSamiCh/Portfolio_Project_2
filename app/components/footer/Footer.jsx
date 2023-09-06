@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../assets/Logo.svg"
+import Logo from "../../Assets/Logo.svg"
 import "./footer.css"
 import Facebook from "../../Assets/Facebook.svg"
 import Twitter from "../../Assets/Twitter.svg"
