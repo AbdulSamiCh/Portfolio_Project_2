@@ -6,7 +6,7 @@ import "./navbar.css"
 import Search from "../../Assets/search.svg"
 import Cart from "../../Assets/Buy.svg"
 import Like from "../../Assets/Heart 1.svg"
-import Account from "../../Assets/profile.svg"
+import Account from "../../Assets/Profile.svg"
 
 
 const Navbar = () => {
