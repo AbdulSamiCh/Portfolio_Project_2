@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import ArrowRight from "../../../app/Assets/ArrowRight.svg"
 import Image from 'next/image';
@@ -12,40 +13,114 @@ import PayPal from "../../Assets/Paypal.svg"
 import Express from "../../Assets/American Express.svg"
 import Visa from "../../Assets/Visa.svg"
 import "./media.css"
+import { useState } from "react";
 
 const Signin = () => {
 
-  return (
-      <>
+const [userEmail, setUserEmail] = useState("");
+    const [userEmailMessage, setuserEmailMessage] = useState("This is required field");
+    const [showUserEmailError, setShowUserEmailError] = useState(false);
 
-        <div className="container mt-5 mb-5">
-          <div className="d-flex justify-content-center">
-            <div className="card style border-0 shadow p-3 mb-5 bg-body-tertiary rounded mt-5">
-              <div className="card-body">
-                <form>
-                  <h1 className='fw-bold text-center mt-3 mb-4'>Sign In</h1>
-                  <input
-                    className="form-control-lg col-12 col-md-12 mt-3 blu"
-                    type="email"
-                    placeholder="Email"
-                  />
-                  <input
-                    className="form-control-lg col-12 col-md-12 mt-4 blu"
-                    type="password"
-                    placeholder="Password"
-                  />
-                  <input type="checkbox" className='mx-1 mt-2' /><span className='mx-2 text-black-50'>Remember Me</span>
-                  <span className='fw-semibold position-absolute end-0 me-5 text-info'>Forget Password</span>
-                  <div class="d-grid gap-2 mt-3 mx-auto">
-                    <button typeof='submit' class="btn btn-info text-white fw-bolder" type="button">Sign In <Image src={ArrowRight} className='mx-2' /> </button>
-                    <p className='text-center mt-3 fw-semibold'>Don’t have account?
-                      <a href="#" className='text-decoration-none'><span className='text-info'> Sign Up</span></a></p>
-                  </div>
-                </form>
-              </div>
+    const [userPassword, setUserPassword] = useState("");
+    const [userPasswordMessage, setUserPasswordMessage] = useState("This is required field");
+    const [showUserPasswordError, setShowUserPasswordError] = useState(false);
+
+    const userEmailHandler = (e) => {
+      setUserEmail(e.target.value);
+      if (userEmail !== "") {
+        setuserEmailMessage("You are doing good");
+      }
+    };
+
+    const userPasswordHandler = (e) => {
+      setUserPassword(e.target.value);
+      if (userPassword !== "") {
+        setUserPasswordMessage("You are doing good");
+      }
+    };
+
+    const formSubmitHandler = (e) => {
+      e.preventDefault();
+
+      if (userEmail === "") {
+        setShowUserEmailError(true);
+      }
+      if (userPassword === "") {
+        setShowUserPasswordError(true);
+      }
+    };
+
+
+  return (
+    <>
+      <div className="container mt-5 mb-5">
+        <div className="justify-content-center row">
+          <div className="col-md-2"></div>
+          <div className="card style border-0 shadow p-3 mb-5 bg-body-tertiary rounded mt-5 col-md-8">
+            <div className="card-body">
+              <form onSubmit={formSubmitHandler}>
+                <h1 className="fw-bold text-center mt-3 mb-4">Sign In</h1>
+                <input
+                  className="form-control-lg col-12 col-md-12 mt-3 blu"
+                  type="email"
+                  placeholder="Email"
+                  value={userEmail}
+                  onChange={userEmailHandler}
+                />
+                {showUserEmailError && (
+                  <p
+                    className={`${
+                      userEmailMessage === "You are doing good"
+                        ? "text-success"
+                        : "text-danger"
+                    } fw-bold`}
+                  >
+                    {userEmailMessage}
+                  </p>
+                )}
+                <input
+                  className="form-control-lg col-12 col-md-12 mt-4 blu"
+                  type="password"
+                  placeholder="Password"
+                  value={userPassword}
+                      onChange={userPasswordHandler}
+                />
+                {showUserPasswordError && (
+                      <p
+                        className={`${
+                          userPasswordMessage === "You are doing good"
+                            ? "text-success"
+                            : "text-danger"
+                        } fw-bold`}
+                      >
+                        {userPasswordMessage}
+                      </p>
+                    )}
+                <input type="checkbox" className="mx-1 mt-2" />
+                <span className="mx-2 text-black-50">Remember Me</span>
+                <span className="fw-semibold position-absolute end-0 me-5 text-info">
+                  Forget Password
+                </span>
+                <div className="d-grid gap-2 mt-3 mx-auto">
+                  <button
+                    type="submit"
+                    className="btn btn-info text-white fw-bolder"
+                  >
+                    Sign In <Image src={ArrowRight} className="mx-2" />{" "}
+                  </button>
+                  <p className="text-center mt-3 fw-semibold">
+                    Don’t have account?
+                    <a href="#" className="text-decoration-none">
+                      <span className="text-info"> Sign Up</span>
+                    </a>
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
+          <div className="col-md-2"></div>
         </div>
+      </div>
 
         <hr />
         <div className="container">
